@@ -1,4 +1,5 @@
 use serde_derive::{Deserialize, Serialize};
+use crate::item::Item;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct State {
@@ -57,32 +58,4 @@ impl State {
         round
     }
 
-    // fn rounding(value: &f32) -> f32 {
-    //     let dev = value % 1.0;
-
-    //     match dev == 0.0 {
-    //         true => 0.0,
-    //         _ => {
-
-    //             let a = (dev * 10.0).round();
-
-    //             match a >= 5.0 {
-    //                 true => 1.0,
-    //                 _ => 0.0
-    //             } 
-    //         }
-    //     }
-    // }
-
-}
-
-#[derive(Debug, Serialize, Deserialize)]
-pub struct Item {
-    pub value: f32,
-}
-
-impl Item {
-    pub fn new(value: f32) -> Item {
-        Item { value }
-    }
 }

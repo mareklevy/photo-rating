@@ -1,8 +1,10 @@
-use state::{ State, Item };
+mod state;
+mod item;
+
+use state::State;
+use item::Item;
 use yew::html::Scope;
 use yew::{ html, Component, Context, Html };
-
-mod state;
 
 pub enum Msg {
     Add(f32),
