@@ -14,14 +14,12 @@ impl State {
         let sum: f32 = self.items
             .iter()
             .map(|i| i.value)
-            .collect::<Vec<_>>()
-            .iter()
             .sum();
 
-        match sum == 0.0 {
+        match sum == 0. {
             true => {
-                self.average = 0.0;
-                self.total = 0.0;
+                self.average = 0.;
+                self.total = 0.;
             }
             _ => {
                 let count = self.items.len() as f32;
@@ -39,7 +37,9 @@ impl State {
                 .iter()
                 .enumerate()
                 .collect::<Vec<_>>();
+
             let &(idx, _) = items.get(idx).unwrap();
+
             idx
         };
         
@@ -53,9 +53,7 @@ impl State {
     }
 
     fn total_rounding(value: &f32) -> f32 {
-        let round = (((value * 10.0)) / 10.0).round();
-
-        round
+        (((value * 10.0)) / 10.0).round()
     }
 
 }
