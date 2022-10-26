@@ -6,7 +6,7 @@ pub struct State {
     pub total: f32,
     pub average: f32,
     pub items: Vec<Item>,
-    pub buttons: Vec<i32>,
+    pub buttons: [i16; 10],
 }
 
 impl State {
