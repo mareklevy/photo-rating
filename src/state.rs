@@ -59,3 +59,16 @@ impl State {
     }
 
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_rounding() {
+        assert_eq!(State::total_rounding(&1.1), 1.);
+        assert_eq!(State::total_rounding(&1.9), 2.);
+        assert_eq!(State::total_rounding(&3.49), 3.);
+        assert_eq!(State::total_rounding(&3.5), 4.);
+    }
+}
